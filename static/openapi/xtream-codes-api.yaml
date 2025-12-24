@@ -4,12 +4,12 @@ info:
   description: |
     Comprehensive API documentation for Xtream Codes IPTV Panel v2.9.2
 
-    This API provides access to:
-    - Live TV streams and categories
-    - Video on Demand (VOD) content
-    - TV Series with episodes
-    - Electronic Program Guide (EPG)
-    - User management and authentication
+    ## Authentication
+    All API requests require username and password as query parameters.
+
+    ## Base URLs
+    - HTTP: `http://server:25461`
+    - HTTPS: `https://server:25463`
   version: 2.9.2
   contact:
     name: API Documentation
@@ -27,29 +27,57 @@ servers:
         description: Server port
 
 tags:
-  - name: Authentication
-    description: User authentication and account info
-  - name: Live TV
-    description: Live TV streams and categories
-  - name: VOD
-    description: Video on Demand content
-  - name: Series
-    description: TV Series and episodes
-  - name: EPG
-    description: Electronic Program Guide
+  - name: Player API
+    description: Client/Player API endpoints (/player_api.php)
+  - name: Panel API
+    description: Panel API endpoints (/panel_api.php)
+  - name: Streaming
+    description: Direct stream URLs
+  - name: Playlists
+    description: M3U playlist and EPG endpoints
 
 paths:
   /player_api.php:
     get:
       tags:
-        - Authentication
-      summary: Authenticate and get user info
-      description: Authenticate user and retrieve account information
+        - Player API
+      summary: Player API - Multiple Actions
+      description: |
+        The Player API endpoint. Without action parameter returns user/server info.
+        With action parameter performs specific operations.
+
+        **Available Actions:**
+        - No action: Get user info and server info
+        - `get_live_categories`: Get live TV categories
+        - `get_live_streams`: Get live TV channels
+        - `get_vod_categories`: Get VOD categories
+        - `get_vod_streams`: Get VOD movies
+        - `get_vod_info`: Get VOD movie details
+        - `get_series_categories`: Get series categories
+        - `get_series`: Get series list
+        - `get_series_info`: Get series details with episodes
+        - `get_short_epg`: Get EPG for a stream
+        - `get_simple_data_table`: Get full EPG data
+      operationId: playerApi
       parameters:
-        - $ref: '#/components/parameters/username'
-        - $ref: '#/components/parameters/password'
+        - name: username
+          in: query
+          required: true
+          description: Account username
+          schema:
+            type: string
+          example: "demo"
+        - name: password
+          in: query
+          required: true
+          description: Account password
+          schema:
+            type: string
+          example: "demo123"
         - name: action
           in: query
+          required: false
+          description: Action to perform (omit for user info)
           schema:
             type: string
             enum:
@@ -63,257 +91,189 @@ paths:
               - get_series_info
               - get_short_epg
               - get_simple_data_table
+        - name: category_id
+          in: query
+          required: false
+          description: Filter by category ID (for get_live_streams, get_vod_streams, get_series)
+          schema:
+            type: integer
+        - name: vod_id
+          in: query
+          required: false
+          description: VOD ID (required for get_vod_info)
+          schema:
+            type: integer
+        - name: series_id
+          in: query
+          required: false
+          description: Series ID (required for get_series_info)
+          schema:
+            type: integer
+        - name: stream_id
+          in: query
+          required: false
+          description: Stream ID (required for get_short_epg, get_simple_data_table)
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          required: false
+          description: Limit results (for get_short_epg)
+          schema:
+            type: integer
+            default: 10
+      responses:
+        '200':
+          description: Successful response (varies by action)
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/UserInfo'
+                  - $ref: '#/components/schemas/CategoryList'
+                  - $ref: '#/components/schemas/LiveStreamList'
+                  - $ref: '#/components/schemas/VodStreamList'
+                  - $ref: '#/components/schemas/VodInfo'
+                  - $ref: '#/components/schemas/SeriesList'
+                  - $ref: '#/components/schemas/SeriesInfo'
+                  - $ref: '#/components/schemas/EpgListings'
+        '401':
+          description: Authentication failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthError'
+
+  /panel_api.php:
+    get:
+      tags:
+        - Panel API
+      summary: Panel API - Full Data
+      description: |
+        Panel API endpoint for panel applications.
+        Returns comprehensive data including all categories and streams.
+
+        **Available Actions:**
+        - No action: Get full account data
+        - `get_epg`: Get EPG for specific stream
+      operationId: panelApi
+      parameters:
+        - name: username
+          in: query
+          required: true
+          description: Account username
+          schema:
+            type: string
+        - name: password
+          in: query
+          required: true
+          description: Account password
+          schema:
+            type: string
+        - name: action
+          in: query
+          required: false
+          schema:
+            type: string
+            enum:
+              - get_epg
+        - name: stream_id
+          in: query
+          required: false
+          description: Stream ID (for get_epg action)
+          schema:
+            type: integer
       responses:
         '200':
           description: Successful response
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserInfo'
+                $ref: '#/components/schemas/PanelData'
 
-  /player_api.php?action=get_live_categories:
+  /get.php:
     get:
       tags:
-        - Live TV
-      summary: Get live TV categories
+        - Playlists
+      summary: Get M3U Playlist
+      description: Generate M3U/M3U8 playlist for IPTV players
+      operationId: getPlaylist
       parameters:
-        - $ref: '#/components/parameters/username'
-        - $ref: '#/components/parameters/password'
-      responses:
-        '200':
-          description: List of live TV categories
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Category'
-
-  /player_api.php?action=get_live_streams:
-    get:
-      tags:
-        - Live TV
-      summary: Get live TV streams
-      parameters:
-        - $ref: '#/components/parameters/username'
-        - $ref: '#/components/parameters/password'
-        - name: category_id
-          in: query
-          description: Filter by category ID
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: List of live streams
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/LiveStream'
-
-  /player_api.php?action=get_vod_categories:
-    get:
-      tags:
-        - VOD
-      summary: Get VOD categories
-      parameters:
-        - $ref: '#/components/parameters/username'
-        - $ref: '#/components/parameters/password'
-      responses:
-        '200':
-          description: List of VOD categories
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Category'
-
-  /player_api.php?action=get_vod_streams:
-    get:
-      tags:
-        - VOD
-      summary: Get VOD streams
-      parameters:
-        - $ref: '#/components/parameters/username'
-        - $ref: '#/components/parameters/password'
-        - name: category_id
-          in: query
-          description: Filter by category ID
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: List of VOD streams
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/VodStream'
-
-  /player_api.php?action=get_vod_info:
-    get:
-      tags:
-        - VOD
-      summary: Get VOD details
-      parameters:
-        - $ref: '#/components/parameters/username'
-        - $ref: '#/components/parameters/password'
-        - name: vod_id
+        - name: username
           in: query
           required: true
-          description: VOD stream ID
           schema:
-            type: integer
-      responses:
-        '200':
-          description: VOD information
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/VodInfo'
-
-  /player_api.php?action=get_series_categories:
-    get:
-      tags:
-        - Series
-      summary: Get series categories
-      parameters:
-        - $ref: '#/components/parameters/username'
-        - $ref: '#/components/parameters/password'
-      responses:
-        '200':
-          description: List of series categories
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Category'
-
-  /player_api.php?action=get_series:
-    get:
-      tags:
-        - Series
-      summary: Get series list
-      parameters:
-        - $ref: '#/components/parameters/username'
-        - $ref: '#/components/parameters/password'
-        - name: category_id
-          in: query
-          description: Filter by category ID
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: List of series
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Series'
-
-  /player_api.php?action=get_series_info:
-    get:
-      tags:
-        - Series
-      summary: Get series details with episodes
-      parameters:
-        - $ref: '#/components/parameters/username'
-        - $ref: '#/components/parameters/password'
-        - name: series_id
+            type: string
+        - name: password
           in: query
           required: true
-          description: Series ID
           schema:
-            type: integer
-      responses:
-        '200':
-          description: Series information with episodes
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SeriesInfo'
-
-  /player_api.php?action=get_short_epg:
-    get:
-      tags:
-        - EPG
-      summary: Get short EPG for stream
-      parameters:
-        - $ref: '#/components/parameters/username'
-        - $ref: '#/components/parameters/password'
-        - name: stream_id
+            type: string
+        - name: type
           in: query
           required: true
-          description: Stream ID
+          description: Playlist type
           schema:
-            type: integer
-        - name: limit
+            type: string
+            enum:
+              - m3u_plus
+              - m3u
+        - name: output
           in: query
-          description: Number of programs to return
+          required: false
+          description: Stream output format
           schema:
-            type: integer
-            default: 10
+            type: string
+            enum:
+              - ts
+              - m3u8
+              - rtmp
+            default: ts
       responses:
         '200':
-          description: EPG listings
+          description: M3U playlist file
           content:
-            application/json:
+            audio/x-mpegurl:
               schema:
-                $ref: '#/components/schemas/EpgListings'
+                type: string
+                example: |
+                  #EXTM3U
+                  #EXTINF:-1 tvg-id="ch1" tvg-name="Channel 1",Channel 1
+                  http://server:25461/user/pass/1.ts
 
   /xmltv.php:
     get:
       tags:
-        - EPG
-      summary: Get full XMLTV EPG
+        - Playlists
+      summary: Get XMLTV EPG
+      description: Get Electronic Program Guide in XMLTV format
+      operationId: getXmltv
       parameters:
-        - $ref: '#/components/parameters/username'
-        - $ref: '#/components/parameters/password'
+        - name: username
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: password
+          in: query
+          required: true
+          schema:
+            type: string
       responses:
         '200':
-          description: XMLTV format EPG
+          description: XMLTV EPG data
           content:
             application/xml:
               schema:
                 type: string
 
-  /get.php:
+  /live/{username}/{password}/{stream_id}.ts:
     get:
       tags:
-        - Authentication
-      summary: Get M3U playlist
-      parameters:
-        - $ref: '#/components/parameters/username'
-        - $ref: '#/components/parameters/password'
-        - name: type
-          in: query
-          required: true
-          schema:
-            type: string
-            enum: [m3u_plus, m3u]
-        - name: output
-          in: query
-          schema:
-            type: string
-            enum: [ts, m3u8, rtmp]
-      responses:
-        '200':
-          description: M3U playlist
-          content:
-            audio/x-mpegurl:
-              schema:
-                type: string
-
-  /{username}/{password}/{stream_id}.ts:
-    get:
-      tags:
-        - Live TV
-      summary: Stream live TV (MPEG-TS)
+        - Streaming
+      summary: Live TV Stream (MPEG-TS)
+      description: Stream live TV channel in MPEG-TS format
+      operationId: streamLiveTs
       parameters:
         - name: username
           in: path
@@ -332,18 +292,20 @@ paths:
             type: integer
       responses:
         '200':
-          description: Live stream
+          description: Live video stream
           content:
             video/mp2t:
               schema:
                 type: string
                 format: binary
 
-  /movie/{username}/{password}/{stream_id}.mkv:
+  /live/{username}/{password}/{stream_id}.m3u8:
     get:
       tags:
-        - VOD
-      summary: Stream VOD content
+        - Streaming
+      summary: Live TV Stream (HLS)
+      description: Stream live TV channel in HLS format
+      operationId: streamLiveHls
       parameters:
         - name: username
           in: path
@@ -362,18 +324,93 @@ paths:
             type: integer
       responses:
         '200':
-          description: VOD stream
+          description: HLS playlist
           content:
-            video/x-matroska:
+            application/vnd.apple.mpegurl:
+              schema:
+                type: string
+
+  /{username}/{password}/{stream_id}.ts:
+    get:
+      tags:
+        - Streaming
+      summary: Live TV Stream (Short URL)
+      description: Alternative short URL format for live TV
+      operationId: streamLiveShort
+      parameters:
+        - name: username
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: password
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: stream_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Live video stream
+          content:
+            video/mp2t:
               schema:
                 type: string
                 format: binary
 
-  /series/{username}/{password}/{episode_id}.mkv:
+  /movie/{username}/{password}/{vod_id}.{ext}:
     get:
       tags:
-        - Series
-      summary: Stream series episode
+        - Streaming
+      summary: VOD Movie Stream
+      description: Stream VOD movie content
+      operationId: streamVod
+      parameters:
+        - name: username
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: password
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: vod_id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: ext
+          in: path
+          required: true
+          description: File extension (mkv, mp4, avi)
+          schema:
+            type: string
+            enum:
+              - mkv
+              - mp4
+              - avi
+      responses:
+        '200':
+          description: VOD video stream
+          content:
+            video/*:
+              schema:
+                type: string
+                format: binary
+
+  /series/{username}/{password}/{episode_id}.{ext}:
+    get:
+      tags:
+        - Streaming
+      summary: Series Episode Stream
+      description: Stream TV series episode
+      operationId: streamEpisode
       parameters:
         - name: username
           in: path
@@ -390,147 +427,262 @@ paths:
           required: true
           schema:
             type: integer
+        - name: ext
+          in: path
+          required: true
+          description: File extension (mkv, mp4, avi)
+          schema:
+            type: string
+            enum:
+              - mkv
+              - mp4
+              - avi
       responses:
         '200':
-          description: Episode stream
+          description: Episode video stream
           content:
-            video/x-matroska:
+            video/*:
+              schema:
+                type: string
+                format: binary
+
+  /timeshift/{username}/{password}/{duration}/{start}/{stream_id}.ts:
+    get:
+      tags:
+        - Streaming
+      summary: Timeshift Stream
+      description: Stream past content using timeshift/catchup
+      operationId: streamTimeshift
+      parameters:
+        - name: username
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: password
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: duration
+          in: path
+          required: true
+          description: Duration in minutes
+          schema:
+            type: integer
+        - name: start
+          in: path
+          required: true
+          description: Start time (YYYY-MM-DD:HH-MM)
+          schema:
+            type: string
+            example: "2024-01-15:14-00"
+        - name: stream_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Timeshift video stream
+          content:
+            video/mp2t:
               schema:
                 type: string
                 format: binary
 
 components:
-  parameters:
-    username:
-      name: username
-      in: query
-      required: true
-      description: Account username
-      schema:
-        type: string
-    password:
-      name: password
-      in: query
-      required: true
-      description: Account password
-      schema:
-        type: string
-
   schemas:
     UserInfo:
       type: object
+      description: User and server information (returned without action parameter)
       properties:
         user_info:
           type: object
           properties:
             username:
               type: string
+              example: "demo"
             password:
               type: string
+              example: "demo123"
+            message:
+              type: string
+            auth:
+              type: integer
+              enum: [0, 1]
+              example: 1
             status:
               type: string
               enum: [Active, Banned, Disabled, Expired]
+              example: "Active"
             exp_date:
               type: string
               nullable: true
+              example: "1735689600"
             is_trial:
               type: string
+              example: "0"
             active_cons:
               type: string
+              example: "0"
             created_at:
               type: string
+              example: "1609459200"
             max_connections:
               type: string
+              example: "1"
             allowed_output_formats:
               type: array
               items:
                 type: string
+              example: ["ts", "m3u8", "rtmp"]
         server_info:
           type: object
           properties:
             url:
               type: string
+              example: "server.example.com"
             port:
               type: string
+              example: "25461"
             https_port:
               type: string
+              example: "25463"
             server_protocol:
               type: string
+              example: "http"
             rtmp_port:
               type: string
+              example: "25462"
             timezone:
               type: string
+              example: "Europe/London"
             timestamp_now:
               type: integer
+              example: 1705320000
             time_now:
               type: string
+              example: "2024-01-15 12:00:00"
+
+    AuthError:
+      type: object
+      properties:
+        user_info:
+          type: object
+          properties:
+            auth:
+              type: integer
+              example: 0
+            status:
+              type: string
+              example: "Expired"
+            message:
+              type: string
+              example: "Account has expired"
+
+    CategoryList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Category'
 
     Category:
       type: object
       properties:
         category_id:
           type: string
+          example: "1"
         category_name:
           type: string
+          example: "Sports"
         parent_id:
           type: integer
+          example: 0
+
+    LiveStreamList:
+      type: array
+      items:
+        $ref: '#/components/schemas/LiveStream'
 
     LiveStream:
       type: object
       properties:
         num:
           type: integer
+          example: 1
         name:
           type: string
+          example: "ESPN HD"
         stream_type:
           type: string
+          example: "live"
         stream_id:
           type: integer
+          example: 12345
         stream_icon:
           type: string
+          example: "http://server/logos/espn.png"
         epg_channel_id:
           type: string
           nullable: true
+          example: "espn.us"
         added:
           type: string
+          example: "1609459200"
         category_id:
           type: string
+          example: "1"
         custom_sid:
           type: string
         tv_archive:
           type: integer
+          description: "1 = timeshift enabled, 0 = disabled"
+          example: 1
         direct_source:
           type: string
         tv_archive_duration:
           type: integer
+          description: Days of archive available
+          example: 7
+
+    VodStreamList:
+      type: array
+      items:
+        $ref: '#/components/schemas/VodStream'
 
     VodStream:
       type: object
       properties:
         num:
           type: integer
+          example: 1
         name:
           type: string
+          example: "Movie Title"
         stream_type:
           type: string
+          example: "movie"
         stream_id:
           type: integer
+          example: 67890
         stream_icon:
           type: string
+          example: "http://server/posters/movie.jpg"
         rating:
           type: string
+          example: "8.5"
         rating_5based:
           type: number
+          example: 4.25
         added:
           type: string
+          example: "1609459200"
         category_id:
           type: string
+          example: "5"
         container_extension:
           type: string
-        custom_sid:
-          type: string
-        direct_source:
-          type: string
+          example: "mkv"
 
     VodInfo:
       type: object
@@ -578,6 +730,11 @@ components:
             container_extension:
               type: string
 
+    SeriesList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Series'
+
     Series:
       type: object
       properties:
@@ -599,8 +756,6 @@ components:
           type: string
         releaseDate:
           type: string
-        last_modified:
-          type: string
         rating:
           type: string
         rating_5based:
@@ -610,8 +765,6 @@ components:
           items:
             type: string
         youtube_trailer:
-          type: string
-        episode_run_time:
           type: string
         category_id:
           type: string
@@ -653,32 +806,36 @@ components:
               type: string
         episodes:
           type: object
+          description: Episodes grouped by season number
           additionalProperties:
             type: array
             items:
-              type: object
-              properties:
-                id:
-                  type: string
-                episode_num:
-                  type: integer
-                title:
-                  type: string
-                container_extension:
-                  type: string
-                info:
-                  type: object
-                  properties:
-                    duration_secs:
-                      type: integer
-                    duration:
-                      type: string
-                    movie_image:
-                      type: string
-                    plot:
-                      type: string
-                    releasedate:
-                      type: string
+              $ref: '#/components/schemas/Episode'
+
+    Episode:
+      type: object
+      properties:
+        id:
+          type: string
+        episode_num:
+          type: integer
+        title:
+          type: string
+        container_extension:
+          type: string
+        info:
+          type: object
+          properties:
+            duration_secs:
+              type: integer
+            duration:
+              type: string
+            movie_image:
+              type: string
+            plot:
+              type: string
+            releasedate:
+              type: string
 
     EpgListings:
       type: object
@@ -708,3 +865,31 @@ components:
                 type: integer
               stop_timestamp:
                 type: integer
+
+    PanelData:
+      type: object
+      description: Full panel data response
+      properties:
+        user_info:
+          $ref: '#/components/schemas/UserInfo/properties/user_info'
+        server_info:
+          $ref: '#/components/schemas/UserInfo/properties/server_info'
+        categories:
+          type: object
+          properties:
+            live:
+              type: array
+              items:
+                $ref: '#/components/schemas/Category'
+            movie:
+              type: array
+              items:
+                $ref: '#/components/schemas/Category'
+            series:
+              type: array
+              items:
+                $ref: '#/components/schemas/Category'
+        available_channels:
+          type: array
+          items:
+            $ref: '#/components/schemas/LiveStream'
