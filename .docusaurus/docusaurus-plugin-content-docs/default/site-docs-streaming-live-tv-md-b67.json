@@ -1,0 +1,29 @@
+{
+  "id": "streaming/live-tv",
+  "title": "Live TV Streaming",
+  "description": "Stream live TV channels",
+  "source": "@site/docs/streaming/live-tv.md",
+  "sourceDirName": "streaming",
+  "slug": "/streaming/live-tv",
+  "permalink": "/xtream-codes-api/streaming/live-tv",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/worldofiptvcom/xtream-codes-api/tree/main/docs/streaming/live-tv.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2,
+    "title": "Live TV Streaming",
+    "description": "Stream live TV channels"
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Streaming Overview",
+    "permalink": "/xtream-codes-api/streaming/overview"
+  },
+  "next": {
+    "title": "VOD Streaming",
+    "permalink": "/xtream-codes-api/streaming/vod"
+  }
+}

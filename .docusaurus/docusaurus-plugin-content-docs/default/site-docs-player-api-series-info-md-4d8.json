@@ -1,0 +1,29 @@
+{
+  "id": "player-api/series-info",
+  "title": "Get Series Info",
+  "description": "Get detailed series information with seasons and episodes",
+  "source": "@site/docs/player-api/series-info.md",
+  "sourceDirName": "player-api",
+  "slug": "/player-api/series-info",
+  "permalink": "/xtream-codes-api/player-api/series-info",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/worldofiptvcom/xtream-codes-api/tree/main/docs/player-api/series-info.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 10,
+  "frontMatter": {
+    "sidebar_position": 10,
+    "title": "Get Series Info",
+    "description": "Get detailed series information with seasons and episodes"
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Get Series",
+    "permalink": "/xtream-codes-api/player-api/series"
+  },
+  "next": {
+    "title": "Get EPG",
+    "permalink": "/xtream-codes-api/player-api/epg"
+  }
+}

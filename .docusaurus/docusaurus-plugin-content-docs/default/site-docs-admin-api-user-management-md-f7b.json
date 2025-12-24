@@ -1,0 +1,29 @@
+{
+  "id": "admin-api/user-management",
+  "title": "User Management",
+  "description": "User CRUD operations",
+  "source": "@site/docs/admin-api/user-management.md",
+  "sourceDirName": "admin-api",
+  "slug": "/admin-api/user-management",
+  "permalink": "/xtream-codes-api/admin-api/user-management",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/worldofiptvcom/xtream-codes-api/tree/main/docs/admin-api/user-management.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4,
+    "title": "User Management",
+    "description": "User CRUD operations"
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Stream Management",
+    "permalink": "/xtream-codes-api/admin-api/stream-management"
+  },
+  "next": {
+    "title": "STB Management",
+    "permalink": "/xtream-codes-api/admin-api/stb-management"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "intro",
+  "title": "Introduction",
+  "description": "Complete API Documentation for Xtream Codes IPTV Panel v2.9.2",
+  "source": "@site/docs/intro.md",
+  "sourceDirName": ".",
+  "slug": "/",
+  "permalink": "/xtream-codes-api/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/worldofiptvcom/xtream-codes-api/tree/main/docs/intro.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1,
+    "slug": "/",
+    "title": "Introduction",
+    "description": "Complete API Documentation for Xtream Codes IPTV Panel v2.9.2"
+  },
+  "sidebar": "apiSidebar",
+  "next": {
+    "title": "Authentication",
+    "permalink": "/xtream-codes-api/authentication"
+  }
+}

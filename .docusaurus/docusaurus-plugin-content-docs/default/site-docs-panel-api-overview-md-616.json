@@ -1,0 +1,29 @@
+{
+  "id": "panel-api/overview",
+  "title": "Panel API Overview",
+  "description": "Overview of the Panel API for panel applications",
+  "source": "@site/docs/panel-api/overview.md",
+  "sourceDirName": "panel-api",
+  "slug": "/panel-api/overview",
+  "permalink": "/xtream-codes-api/panel-api/overview",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/worldofiptvcom/xtream-codes-api/tree/main/docs/panel-api/overview.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1,
+    "title": "Panel API Overview",
+    "description": "Overview of the Panel API for panel applications"
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Get EPG",
+    "permalink": "/xtream-codes-api/player-api/epg"
+  },
+  "next": {
+    "title": "Get Full Data",
+    "permalink": "/xtream-codes-api/panel-api/full-data"
+  }
+}

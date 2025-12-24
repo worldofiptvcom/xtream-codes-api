@@ -1,0 +1,25 @@
+{
+  "id": "utilities/playlists",
+  "title": "M3U Playlists",
+  "description": "Generate M3U/M3U8 playlists",
+  "source": "@site/docs/utilities/playlists.md",
+  "sourceDirName": "utilities",
+  "slug": "/utilities/playlists",
+  "permalink": "/xtream-codes-api/utilities/playlists",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/worldofiptvcom/xtream-codes-api/tree/main/docs/utilities/playlists.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2,
+    "title": "M3U Playlists",
+    "description": "Generate M3U/M3U8 playlists"
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "XMLTV EPG",
+    "permalink": "/xtream-codes-api/utilities/xmltv"
+  }
+}

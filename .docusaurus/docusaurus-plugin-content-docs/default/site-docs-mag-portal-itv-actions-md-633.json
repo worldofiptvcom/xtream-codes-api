@@ -1,0 +1,29 @@
+{
+  "id": "mag-portal/itv-actions",
+  "title": "ITV Actions",
+  "description": "Live TV endpoints for MAG",
+  "source": "@site/docs/mag-portal/itv-actions.md",
+  "sourceDirName": "mag-portal",
+  "slug": "/mag-portal/itv-actions",
+  "permalink": "/xtream-codes-api/mag-portal/itv-actions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/worldofiptvcom/xtream-codes-api/tree/main/docs/mag-portal/itv-actions.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4,
+    "title": "ITV Actions",
+    "description": "Live TV endpoints for MAG"
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "STB Actions",
+    "permalink": "/xtream-codes-api/mag-portal/stb-actions"
+  },
+  "next": {
+    "title": "VOD Actions",
+    "permalink": "/xtream-codes-api/mag-portal/vod-actions"
+  }
+}

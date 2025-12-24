@@ -1,0 +1,29 @@
+{
+  "id": "enigma2-api/vod-bouquets",
+  "title": "VOD Bouquets",
+  "description": "Generate Enigma2 bouquets for VOD content",
+  "source": "@site/docs/enigma2-api/vod-bouquets.md",
+  "sourceDirName": "enigma2-api",
+  "slug": "/enigma2-api/vod-bouquets",
+  "permalink": "/xtream-codes-api/enigma2-api/vod-bouquets",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/worldofiptvcom/xtream-codes-api/tree/main/docs/enigma2-api/vod-bouquets.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3,
+    "title": "VOD Bouquets",
+    "description": "Generate Enigma2 bouquets for VOD content"
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Live TV Bouquets",
+    "permalink": "/xtream-codes-api/enigma2-api/live-bouquets"
+  },
+  "next": {
+    "title": "Streaming Overview",
+    "permalink": "/xtream-codes-api/streaming/overview"
+  }
+}

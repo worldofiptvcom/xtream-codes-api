@@ -1,0 +1,29 @@
+{
+  "id": "player-api/user-info",
+  "title": "Get User Info",
+  "description": "Get authenticated user information and server details",
+  "source": "@site/docs/player-api/user-info.md",
+  "sourceDirName": "player-api",
+  "slug": "/player-api/user-info",
+  "permalink": "/xtream-codes-api/player-api/user-info",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/worldofiptvcom/xtream-codes-api/tree/main/docs/player-api/user-info.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2,
+    "title": "Get User Info",
+    "description": "Get authenticated user information and server details"
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Player API Overview",
+    "permalink": "/xtream-codes-api/player-api/overview"
+  },
+  "next": {
+    "title": "Get Live Categories",
+    "permalink": "/xtream-codes-api/player-api/live-categories"
+  }
+}

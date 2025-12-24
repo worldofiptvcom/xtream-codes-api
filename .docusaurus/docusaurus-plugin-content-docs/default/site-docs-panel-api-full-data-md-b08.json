@@ -1,0 +1,29 @@
+{
+  "id": "panel-api/full-data",
+  "title": "Get Full Data",
+  "description": "Get complete user data, categories, and channels",
+  "source": "@site/docs/panel-api/full-data.md",
+  "sourceDirName": "panel-api",
+  "slug": "/panel-api/full-data",
+  "permalink": "/xtream-codes-api/panel-api/full-data",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/worldofiptvcom/xtream-codes-api/tree/main/docs/panel-api/full-data.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2,
+    "title": "Get Full Data",
+    "description": "Get complete user data, categories, and channels"
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Panel API Overview",
+    "permalink": "/xtream-codes-api/panel-api/overview"
+  },
+  "next": {
+    "title": "Get EPG",
+    "permalink": "/xtream-codes-api/panel-api/get-epg"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "player-api/vod-categories",
+  "title": "Get VOD Categories",
+  "description": "Get list of VOD/movie categories",
+  "source": "@site/docs/player-api/vod-categories.md",
+  "sourceDirName": "player-api",
+  "slug": "/player-api/vod-categories",
+  "permalink": "/xtream-codes-api/player-api/vod-categories",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/worldofiptvcom/xtream-codes-api/tree/main/docs/player-api/vod-categories.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5,
+    "title": "Get VOD Categories",
+    "description": "Get list of VOD/movie categories"
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Get Live Streams",
+    "permalink": "/xtream-codes-api/player-api/live-streams"
+  },
+  "next": {
+    "title": "Get VOD Streams",
+    "permalink": "/xtream-codes-api/player-api/vod-streams"
+  }
+}

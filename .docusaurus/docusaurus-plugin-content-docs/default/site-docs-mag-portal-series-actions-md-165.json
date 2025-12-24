@@ -1,0 +1,29 @@
+{
+  "id": "mag-portal/series-actions",
+  "title": "Series Actions",
+  "description": "TV Series for MAG",
+  "source": "@site/docs/mag-portal/series-actions.md",
+  "sourceDirName": "mag-portal",
+  "slug": "/mag-portal/series-actions",
+  "permalink": "/xtream-codes-api/mag-portal/series-actions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/worldofiptvcom/xtream-codes-api/tree/main/docs/mag-portal/series-actions.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "sidebar_position": 6,
+    "title": "Series Actions",
+    "description": "TV Series for MAG"
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "VOD Actions",
+    "permalink": "/xtream-codes-api/mag-portal/vod-actions"
+  },
+  "next": {
+    "title": "Watchdog",
+    "permalink": "/xtream-codes-api/mag-portal/watchdog"
+  }
+}

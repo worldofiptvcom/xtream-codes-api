@@ -1,0 +1,29 @@
+{
+  "id": "error-codes",
+  "title": "Error Codes",
+  "description": "HTTP status codes and error messages for Xtream Codes API",
+  "source": "@site/docs/error-codes.md",
+  "sourceDirName": ".",
+  "slug": "/error-codes",
+  "permalink": "/xtream-codes-api/error-codes",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/worldofiptvcom/xtream-codes-api/tree/main/docs/error-codes.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3,
+    "title": "Error Codes",
+    "description": "HTTP status codes and error messages for Xtream Codes API"
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Authentication",
+    "permalink": "/xtream-codes-api/authentication"
+  },
+  "next": {
+    "title": "Player API Overview",
+    "permalink": "/xtream-codes-api/player-api/overview"
+  }
+}

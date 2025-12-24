@@ -1,0 +1,29 @@
+{
+  "id": "streaming/overview",
+  "title": "Streaming Overview",
+  "description": "Stream URL formats and protocols",
+  "source": "@site/docs/streaming/overview.md",
+  "sourceDirName": "streaming",
+  "slug": "/streaming/overview",
+  "permalink": "/xtream-codes-api/streaming/overview",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/worldofiptvcom/xtream-codes-api/tree/main/docs/streaming/overview.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1,
+    "title": "Streaming Overview",
+    "description": "Stream URL formats and protocols"
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "VOD Bouquets",
+    "permalink": "/xtream-codes-api/enigma2-api/vod-bouquets"
+  },
+  "next": {
+    "title": "Live TV Streaming",
+    "permalink": "/xtream-codes-api/streaming/live-tv"
+  }
+}

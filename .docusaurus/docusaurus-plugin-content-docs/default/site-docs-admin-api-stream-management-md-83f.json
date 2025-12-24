@@ -1,0 +1,29 @@
+{
+  "id": "admin-api/stream-management",
+  "title": "Stream Management",
+  "description": "Live stream control endpoints",
+  "source": "@site/docs/admin-api/stream-management.md",
+  "sourceDirName": "admin-api",
+  "slug": "/admin-api/stream-management",
+  "permalink": "/xtream-codes-api/admin-api/stream-management",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/worldofiptvcom/xtream-codes-api/tree/main/docs/admin-api/stream-management.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3,
+    "title": "Stream Management",
+    "description": "Live stream control endpoints"
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Server Management",
+    "permalink": "/xtream-codes-api/admin-api/server-management"
+  },
+  "next": {
+    "title": "User Management",
+    "permalink": "/xtream-codes-api/admin-api/user-management"
+  }
+}

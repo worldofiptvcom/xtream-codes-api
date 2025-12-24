@@ -1,0 +1,29 @@
+{
+  "id": "streaming/vod",
+  "title": "VOD Streaming",
+  "description": "Stream movies and video on demand",
+  "source": "@site/docs/streaming/vod.md",
+  "sourceDirName": "streaming",
+  "slug": "/streaming/vod",
+  "permalink": "/xtream-codes-api/streaming/vod",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/worldofiptvcom/xtream-codes-api/tree/main/docs/streaming/vod.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3,
+    "title": "VOD Streaming",
+    "description": "Stream movies and video on demand"
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Live TV Streaming",
+    "permalink": "/xtream-codes-api/streaming/live-tv"
+  },
+  "next": {
+    "title": "Series Streaming",
+    "permalink": "/xtream-codes-api/streaming/series"
+  }
+}

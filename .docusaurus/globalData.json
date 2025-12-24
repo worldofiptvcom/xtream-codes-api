@@ -1,0 +1,237 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/xtream-codes-api/",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/xtream-codes-api/",
+          "mainDocId": "intro",
+          "docs": [
+            {
+              "id": "admin-api/overview",
+              "path": "/xtream-codes-api/admin-api/overview",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "admin-api/reseller-management",
+              "path": "/xtream-codes-api/admin-api/reseller-management",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "admin-api/server-management",
+              "path": "/xtream-codes-api/admin-api/server-management",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "admin-api/stb-management",
+              "path": "/xtream-codes-api/admin-api/stb-management",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "admin-api/stream-management",
+              "path": "/xtream-codes-api/admin-api/stream-management",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "admin-api/user-management",
+              "path": "/xtream-codes-api/admin-api/user-management",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "authentication",
+              "path": "/xtream-codes-api/authentication",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "enigma2-api/live-bouquets",
+              "path": "/xtream-codes-api/enigma2-api/live-bouquets",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "enigma2-api/overview",
+              "path": "/xtream-codes-api/enigma2-api/overview",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "enigma2-api/vod-bouquets",
+              "path": "/xtream-codes-api/enigma2-api/vod-bouquets",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "error-codes",
+              "path": "/xtream-codes-api/error-codes",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "intro",
+              "path": "/xtream-codes-api/",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "mag-portal/authentication",
+              "path": "/xtream-codes-api/mag-portal/authentication",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "mag-portal/itv-actions",
+              "path": "/xtream-codes-api/mag-portal/itv-actions",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "mag-portal/overview",
+              "path": "/xtream-codes-api/mag-portal/overview",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "mag-portal/series-actions",
+              "path": "/xtream-codes-api/mag-portal/series-actions",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "mag-portal/stb-actions",
+              "path": "/xtream-codes-api/mag-portal/stb-actions",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "mag-portal/vod-actions",
+              "path": "/xtream-codes-api/mag-portal/vod-actions",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "mag-portal/watchdog",
+              "path": "/xtream-codes-api/mag-portal/watchdog",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "openapi",
+              "path": "/xtream-codes-api/openapi"
+            },
+            {
+              "id": "panel-api/full-data",
+              "path": "/xtream-codes-api/panel-api/full-data",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "panel-api/get-epg",
+              "path": "/xtream-codes-api/panel-api/get-epg",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "panel-api/overview",
+              "path": "/xtream-codes-api/panel-api/overview",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "player-api/epg",
+              "path": "/xtream-codes-api/player-api/epg",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "player-api/live-categories",
+              "path": "/xtream-codes-api/player-api/live-categories",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "player-api/live-streams",
+              "path": "/xtream-codes-api/player-api/live-streams",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "player-api/overview",
+              "path": "/xtream-codes-api/player-api/overview",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "player-api/series",
+              "path": "/xtream-codes-api/player-api/series",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "player-api/series-categories",
+              "path": "/xtream-codes-api/player-api/series-categories",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "player-api/series-info",
+              "path": "/xtream-codes-api/player-api/series-info",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "player-api/user-info",
+              "path": "/xtream-codes-api/player-api/user-info",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "player-api/vod-categories",
+              "path": "/xtream-codes-api/player-api/vod-categories",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "player-api/vod-info",
+              "path": "/xtream-codes-api/player-api/vod-info",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "player-api/vod-streams",
+              "path": "/xtream-codes-api/player-api/vod-streams",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "streaming/live-tv",
+              "path": "/xtream-codes-api/streaming/live-tv",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "streaming/overview",
+              "path": "/xtream-codes-api/streaming/overview",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "streaming/series",
+              "path": "/xtream-codes-api/streaming/series",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "streaming/timeshift",
+              "path": "/xtream-codes-api/streaming/timeshift",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "streaming/vod",
+              "path": "/xtream-codes-api/streaming/vod",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "utilities/playlists",
+              "path": "/xtream-codes-api/utilities/playlists",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "utilities/xmltv",
+              "path": "/xtream-codes-api/utilities/xmltv",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "/category/utilities",
+              "path": "/xtream-codes-api/category/utilities",
+              "sidebar": "apiSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "apiSidebar": {
+              "link": {
+                "path": "/xtream-codes-api/",
+                "label": "Introduction"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

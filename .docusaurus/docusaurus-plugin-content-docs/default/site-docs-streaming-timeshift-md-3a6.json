@@ -1,0 +1,29 @@
+{
+  "id": "streaming/timeshift",
+  "title": "Timeshift & Catchup",
+  "description": "Watch past broadcasts and recordings",
+  "source": "@site/docs/streaming/timeshift.md",
+  "sourceDirName": "streaming",
+  "slug": "/streaming/timeshift",
+  "permalink": "/xtream-codes-api/streaming/timeshift",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/worldofiptvcom/xtream-codes-api/tree/main/docs/streaming/timeshift.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5,
+    "title": "Timeshift & Catchup",
+    "description": "Watch past broadcasts and recordings"
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Series Streaming",
+    "permalink": "/xtream-codes-api/streaming/series"
+  },
+  "next": {
+    "title": "Utilities",
+    "permalink": "/xtream-codes-api/category/utilities"
+  }
+}

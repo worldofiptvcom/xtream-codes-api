@@ -1,0 +1,20 @@
+{
+  "id": "openapi",
+  "title": "OpenAPI Specification",
+  "description": "Download the OpenAPI 3.0 specification",
+  "source": "@site/docs/openapi.md",
+  "sourceDirName": ".",
+  "slug": "/openapi",
+  "permalink": "/xtream-codes-api/openapi",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/worldofiptvcom/xtream-codes-api/tree/main/docs/openapi.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 100,
+  "frontMatter": {
+    "sidebar_position": 100,
+    "title": "OpenAPI Specification",
+    "description": "Download the OpenAPI 3.0 specification"
+  }
+}

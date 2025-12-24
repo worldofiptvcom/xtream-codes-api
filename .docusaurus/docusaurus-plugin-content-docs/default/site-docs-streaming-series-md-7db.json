@@ -1,0 +1,29 @@
+{
+  "id": "streaming/series",
+  "title": "Series Streaming",
+  "description": "Stream TV series episodes",
+  "source": "@site/docs/streaming/series.md",
+  "sourceDirName": "streaming",
+  "slug": "/streaming/series",
+  "permalink": "/xtream-codes-api/streaming/series",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/worldofiptvcom/xtream-codes-api/tree/main/docs/streaming/series.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4,
+    "title": "Series Streaming",
+    "description": "Stream TV series episodes"
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "VOD Streaming",
+    "permalink": "/xtream-codes-api/streaming/vod"
+  },
+  "next": {
+    "title": "Timeshift & Catchup",
+    "permalink": "/xtream-codes-api/streaming/timeshift"
+  }
+}

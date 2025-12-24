@@ -1,0 +1,29 @@
+{
+  "id": "panel-api/get-epg",
+  "title": "Get EPG",
+  "description": "Get EPG data via Panel API",
+  "source": "@site/docs/panel-api/get-epg.md",
+  "sourceDirName": "panel-api",
+  "slug": "/panel-api/get-epg",
+  "permalink": "/xtream-codes-api/panel-api/get-epg",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/worldofiptvcom/xtream-codes-api/tree/main/docs/panel-api/get-epg.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3,
+    "title": "Get EPG",
+    "description": "Get EPG data via Panel API"
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Get Full Data",
+    "permalink": "/xtream-codes-api/panel-api/full-data"
+  },
+  "next": {
+    "title": "Admin API Overview",
+    "permalink": "/xtream-codes-api/admin-api/overview"
+  }
+}
