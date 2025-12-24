@@ -8,12 +8,16 @@ export default function SwaggerPage(): JSX.Element {
     <Layout
       title="API Explorer"
       description="Interactive API documentation with Swagger UI">
-      <div style={{ padding: '20px' }}>
+      <div className="swagger-ui-wrap">
         <SwaggerUI
           url="/xtream-codes-api/openapi/xtream-codes-api.yaml"
           docExpansion="list"
           defaultModelsExpandDepth={1}
           deepLinking={true}
+          displayRequestDuration={true}
+          filter={true}
+          showExtensions={true}
+          showCommonExtensions={true}
         />
       </div>
     </Layout>
