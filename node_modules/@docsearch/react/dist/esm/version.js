@@ -1,1 +1,0 @@
-var r="4.4.0";export{r as version};
