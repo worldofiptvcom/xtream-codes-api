@@ -111,11 +111,11 @@ const config: Config = {
             },
             {
               label: 'Player API',
-              to: '/category/player-api',
+              to: '/player-api/overview',
             },
             {
               label: 'Streaming',
-              to: '/category/streaming',
+              to: '/streaming/overview',
             },
           ],
         },
@@ -124,21 +124,25 @@ const config: Config = {
           items: [
             {
               label: 'Admin API',
-              to: '/category/admin-api',
+              to: '/admin-api/overview',
             },
             {
               label: 'MAG Portal',
-              to: '/category/mag-portal',
+              to: '/mag-portal/overview',
             },
             {
               label: 'Enigma2 API',
-              to: '/category/enigma2-api',
+              to: '/enigma2-api/overview',
             },
           ],
         },
         {
           title: 'Resources',
           items: [
+            {
+              label: 'API Explorer (Swagger)',
+              to: '/swagger',
+            },
             {
               label: 'OpenAPI Specification',
               to: '/openapi',

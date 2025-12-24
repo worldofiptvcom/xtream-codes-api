@@ -25,13 +25,13 @@ Xtream Codes is a complete IPTV panel management system that provides APIs for:
 
 | API | Endpoint | Purpose |
 |-----|----------|---------|
-| [Player API](/category/player-api) | `/player_api.php` | Client applications & media players |
-| [Panel API](/category/panel-api) | `/panel_api.php` | Panel applications |
-| [Admin API](/category/admin-api) | `/api.php` | Server & user management |
-| [MAG Portal](/category/mag-portal) | `/portal.php` | MAG STB devices |
-| [Enigma2 API](/category/enigma2-api) | `/enigma2.php` | Enigma2 receivers |
-| [Streaming](/category/streaming) | `/live/`, `/movie/`, `/series/` | Media streaming |
-| [Utilities](/category/utilities) | `/xmltv.php`, `/get.php` | EPG & playlists |
+| [Player API](/player-api/overview) | `/player_api.php` | Client applications & media players |
+| [Panel API](/panel-api/overview) | `/panel_api.php` | Panel applications |
+| [Admin API](/admin-api/overview) | `/api.php` | Server & user management |
+| [MAG Portal](/mag-portal/overview) | `/portal.php` | MAG STB devices |
+| [Enigma2 API](/enigma2-api/overview) | `/enigma2.php` | Enigma2 receivers |
+| [Streaming](/streaming/overview) | `/live/`, `/movie/`, `/series/` | Media streaming |
+| [Utilities](/utilities/xmltv) | `/xmltv.php`, `/get.php` | EPG & playlists |
 
 ## Base URL
 
