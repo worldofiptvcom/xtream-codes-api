@@ -28,3 +28,39 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* Swagger UI Dark Mode */
+[data-theme='dark'] .swagger-ui {
+  filter: invert(88%) hue-rotate(180deg);
+}
+
+[data-theme='dark'] .swagger-ui .opblock-tag {
+  border-bottom-color: #444;
+}
+
+[data-theme='dark'] .swagger-ui .opblock {
+  border-color: #444;
+}
+
+[data-theme='dark'] .swagger-ui .opblock .opblock-summary {
+  border-bottom-color: #444;
+}
+
+[data-theme='dark'] .swagger-ui svg {
+  filter: invert(100%) hue-rotate(180deg);
+}
+
+/* Swagger UI general styling */
+.swagger-ui .topbar {
+  display: none;
+}
+
+.swagger-ui .info {
+  margin: 20px 0;
+}
+
+.swagger-ui .scheme-container {
+  background: transparent;
+  box-shadow: none;
+  padding: 15px 0;
+}

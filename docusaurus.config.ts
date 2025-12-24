@@ -83,6 +83,11 @@ const config: Config = {
           label: 'API Reference',
         },
         {
+          to: '/swagger',
+          label: 'API Explorer',
+          position: 'left',
+        },
+        {
           to: '/openapi',
           label: 'OpenAPI Spec',
           position: 'left',
